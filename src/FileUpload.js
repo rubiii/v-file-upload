@@ -7,11 +7,12 @@ class FileUpload {
 
   upload(file, additionalData = {}) {
     let xhr = new XMLHttpRequest()
-    xhr.responseType = 'json'
 
     // Headers
     xhr.open('POST', this.url, true)
     this._setXhrHeaders(xhr)
+
+    xhr.responseType = 'json'
 
     // Events
     xhr.upload.addEventListener('progress', this.onProgress, false)
